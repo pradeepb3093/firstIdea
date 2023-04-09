@@ -2372,12 +2372,10 @@ h3 {
 /* line 8, ../../Arafath/CL/December/236. Event-02/HTML/scss/_map.scss */
 .map_area .location_information {
   position: absolute;
-  right: 0;
   bottom: 0;
   z-index: 9;
   padding: 65px 70px 70px 65px;
-  right: 20%;
-  max-width: 460px;
+  width: 100%;
   background-color: rgba(0,0,0,0.7)
 }
 
@@ -2385,9 +2383,12 @@ h3 {
   /* line 8, ../../Arafath/CL/December/236. Event-02/HTML/scss/_map.scss */
   .map_area .location_information {
     padding: 20px;
-    right: 20px;
-    left: 20px;
-    bottom: 20px;
+    top: 0;
+    height: 700px;
+  }
+
+  .contact-form {
+    margin-top: 30px;
   }
 }
 
@@ -2407,8 +2408,10 @@ h3 {
 
 @media (max-width: 767px) {
   /* line 30, ../../Arafath/CL/December/236. Event-02/HTML/scss/_map.scss */
-  .map_area .location_information .info_wrap .single_info {
-    display: block;
+  .map_area .location_information .info_wrap .single_info p,
+  .map_area .location_information .info_wrap .single_info .social-media-icon-tray{
+    top: -5px;
+    position: relative;
   }
 }
 
@@ -2453,6 +2456,26 @@ h3 {
   .map_area .location_information .info_wrap .single_info p {
     font-size: 14px;
   }
+}
+
+input, textarea {
+  padding: 5px;
+  background-color: #fefefe;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+input {
+  width: 300px;
+}
+
+input[type=submit] {
+  width: 100px;
+  float: right;
+}
+
+textarea {
+  resize: none;
 }
 
 /* line 1, ../../Arafath/CL/December/236. Event-02/HTML/scss/_program_details.scss */

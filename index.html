@@ -350,7 +350,7 @@
           </div>
         </div>
         <div class="row justify-content-center">
-          <div class="col-lg-8">
+          <div class="col-lg-12">
             <div class="program_detail_wrap">
               <div class="single_propram">
                 <div class="inner_wrap">
@@ -521,28 +521,72 @@
         data-wow-delay=".3s"
       >
         <h3>Find us</h3>
-        <div class="info_wrap">
-          <div class="single_info">
-            <span>Address:</span>
-            <p>No 6, Muva Street Arumbakam-600106</p>
-          </div>
-          <div class="single_info">
-            <span>Phone:</span>
-            <p>+91 9043984991</p>
-          </div>
-          <div class="single_info">
-            <span>Email:</span>
-            <p>contact@firstidea.net</p>
-          </div>
-          <div class="single_info">
-            <span>Social Media:</span>
-            <div class="pt-1 social-media-icon-tray">
-              <a
-                target="_blank"
-                href="https://www.instagram.com/first_idea_event/"
-                ><i class="ti-instagram"></i> Instagram</a
-              >
+        <div class="info_wrap row">
+          <div class="col-lg-5 mr-4">
+            <div class="single_info">
+              <span>Address:</span>
+              <p>No 6, Muva Street Arumbakam-600106</p>
             </div>
+            <div class="single_info">
+              <span>Phone:</span>
+              <p>+91 9043984991</p>
+            </div>
+            <div class="single_info">
+              <span>Email:</span>
+              <p>contact@firstidea.net</p>
+            </div>
+            <div class="single_info">
+              <span>Social Media:</span>
+              <div class="social-media-icon-tray">
+                <a
+                  target="_blank"
+                  href="https://www.instagram.com/first_idea_event/"
+                  ><i class="ti-instagram"></i> Instagram</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 contact-form">
+            <form id="contacUs" name="contactUs" class="d-flex flex-column">
+              <form-group>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  placeholder="Full name"
+                  required
+                />
+              </form-group>
+              <form-group>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email-id"
+                  required
+                />
+              </form-group>
+
+              <form-group>
+                <input
+                  type="phone"
+                  name="mobileNo"
+                  id="mobileNo"
+                  placeholder="Mobile-no"
+                  required
+                />
+              </form-group>
+              <textarea cols="10" rows="7" id="message"> </textarea>
+              <form-group>
+                <button
+                  class="btn btn-primary float-right mr-2"
+                  type="button"
+                  onclick="sendEmail()"
+                >
+                  Send
+                </button>
+              </form-group>
+            </form>
           </div>
         </div>
       </div>
@@ -569,6 +613,7 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/tilt.jquery.js"></script>
     <script src="js/plugins.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
     <!--contact js-->
     <script src="js/contact.js"></script>
@@ -578,5 +623,40 @@
     <script src="js/mail-script.js"></script>
 
     <script src="js/main.js"></script>
+
+    <script>
+      function clearForm() {
+        document.getElementById("fullName").setAttribute(value, "");
+        document.getElementById("email").setAttribute(value, "");
+        document.getElementById("mobileNo").setAttribute(value, "");
+        document.getElementById("message").setAttribute(value, "");
+      }
+      function sendEmail() {
+        var name = document.getElementById("fullName").value;
+        var email = document.getElementById("email").value;
+        var mobile = document.getElementById("mobileNo").value;
+        var message =
+          "I am " +
+          name +
+          "contact no - " +
+          mobile +
+          document.getElementById("message").value;
+
+        Email.send({
+          SecureToken: "22aff2456710a82a5722086ee040056c",
+          // To: "contact@firstidea.net",
+          To: "pbpradeeptechno@gmail.com",
+          From: email,
+          Subject: "Enquire from " + name,
+          Body:
+            "<html><h2>Contact Form from ${name}</h2><p>" +
+            message +
+            "</p></html>",
+        }).then((message) => {
+          alert(message);
+          clearForm;
+        });
+      }
+    </script>
   </body>
 </html>
