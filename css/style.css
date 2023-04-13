@@ -980,6 +980,21 @@ h3 {
   top: -1px;
 }
 
+#sticky-header {
+  height: 130px;
+}
+
+.nav-section nav,
+.logo-section {
+  text-align: end;
+}
+
+/* #sticky-header .container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 40px;
+} */
+
 /* line 1, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
 .header-area {
   left: 0;
@@ -1493,9 +1508,14 @@ h3 {
   }
 }
 
+.slider .logos img {
+  height: 100px;
+  width: 150px;
+}
+
 /* line 1, ../../Arafath/CL/December/236. Event-02/HTML/scss/_slider.scss */
 .slider_bg_1 {
-  background-image: url(../img/banner/banner.png);
+  background-image: url(../img/banner/banner-min.png);
 }
 
 /* line 4, ../../Arafath/CL/December/236. Event-02/HTML/scss/_slider.scss */
@@ -2476,11 +2496,6 @@ input[type=submit] {
 
 textarea {
   resize: none;
-}
-
-/* line 1, ../../Arafath/CL/December/236. Event-02/HTML/scss/_program_details.scss */
-.detials_bg_1 {
-  background-image: url(../img/program_details/details_banner.png);
 }
 
 /* line 4, ../../Arafath/CL/December/236. Event-02/HTML/scss/_program_details.scss */
