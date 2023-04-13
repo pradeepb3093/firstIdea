@@ -989,6 +989,23 @@ h3 {
   text-align: end;
 }
 
+.mobile-menu {
+  position: absolute;
+  top: 85px;
+}
+
+@media (max-width: 991px) {
+  .nav-section nav,
+    .logo-section {
+      text-align: start;
+    }
+
+    .logo-section {
+      position: relative;
+      top: -50px;
+    }
+}
+
 /* #sticky-header .container {
   width: 100%;
   max-width: 100%;
@@ -2487,6 +2504,12 @@ input, textarea {
 
 input {
   width: 300px;
+}
+
+@media (max-width: 300px) {
+  input {
+      width: auto;
+  }
 }
 
 input[type=submit] {
