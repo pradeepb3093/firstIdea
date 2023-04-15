@@ -2359,10 +2359,40 @@ h3 {
   position: relative;
 }
 
+#slider-container {
+  overflow: scroll;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+}
+
+#slider-container::-webkit-scrollbar {
+  display: none;
+}
+
 .slider {
-  animation: slidein 30s linear infinite;
+  /* animation: slidein 30s linear infinite; */
   white-space: nowrap;
 }
+
+.slider_btn {
+  color: #fff;
+  font-size: 30px;
+  position: absolute;
+  bottom: 0;
+}
+
+.slider_btn:hover {
+  color: grey;
+}
+
+.slider_btn.right {
+  right: 0;
+}
+.slider_btn.left {
+  left: 0;
+}
+
 .logos {
   width: auto;
   display: inline-block;

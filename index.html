@@ -424,7 +424,7 @@
         </div>
         <div class="row">
           <div class="col-lg-11">
-            <div class="container rounded" style="overflow: hidden">
+            <div id="slider-container" class="container rounded">
               <div class="slider">
                 <div class="logos">
                   <img
@@ -476,6 +476,18 @@
                 </div>
               </div>
             </div>
+            <a
+              class="slider_btn left"
+              href="javascript:void(0)"
+              onclick="slideLeft()"
+              ><i class="ti-angle-left"></i
+            ></a>
+            <a
+              class="slider_btn right"
+              href="javascript:void(0)"
+              onclick="slideRight()"
+              ><i class="ti-angle-right"></i
+            ></a>
           </div>
         </div>
       </div>
@@ -790,6 +802,24 @@
       (function () {
         emailjs.init("7h_ntwWA2sQSnq8ok");
       })();
+
+      function slideLeft() {
+        var scrollContainer = document.getElementById("slider-container");
+        // document.getElementById("slider-container").scrollLeft -= 150;
+        scrollContainer.scrollTo({
+          left: scrollContainer.scrollLeft - 200,
+          behavior: "smooth",
+        });
+      }
+
+      function slideRight() {
+        var scrollContainer = document.getElementById("slider-container");
+        // document.getElementById("slider-container").scrollLeft += 150;
+        scrollContainer.scrollTo({
+          left: scrollContainer.scrollLeft + 200,
+          behavior: "smooth",
+        });
+      }
 
       window.onload = function () {
         document
