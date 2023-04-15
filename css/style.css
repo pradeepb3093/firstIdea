@@ -980,7 +980,9 @@ h3 {
   top: -1px;
 }
 
-#sticky-header {
+#sticky-header,
+.header_bottom_border,
+.header_bottom_border .row {
   height: 130px;
 }
 
@@ -2493,6 +2495,10 @@ h3 {
   .map_area .location_information .info_wrap .single_info p {
     font-size: 14px;
   }
+}
+
+.link-underline {
+  text-decoration: underline;
 }
 
 input, textarea {
